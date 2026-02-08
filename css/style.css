@@ -856,12 +856,21 @@ p:last-child {
 }
 
 .about-visual {
-  height: 28vh;
-  min-height: 200px;
-  background: linear-gradient(180deg, var(--color-charcoal-elevated) 0%, var(--color-black) 100%);
-  margin: var(--space-xl) 0;
-  border: 1px solid var(--color-glass-border);
+  height: 320px;
+  margin: 4rem 0;
+  border-radius: 14px;
+  background:
+          linear-gradient(
+                  180deg,
+                  rgba(201,162,77,0.08),
+                  rgba(0,0,0,0.9)
+          ),
+          url("../images/about.png");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
 }
+
 
 /* Contact Page */
 .contact-section {
