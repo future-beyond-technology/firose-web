@@ -63,6 +63,10 @@ function setProductContent(product) {
   if (img && product.image) {
     img.src = product.image;
     img.alt = product.name + ' — AR Perfume';
+    img.decoding = 'async';
+    if (!img.getAttribute('loading')) {
+      img.loading = 'lazy';
+    }
   }
 
   document.title = product.name + ' — AR PERFUME';
