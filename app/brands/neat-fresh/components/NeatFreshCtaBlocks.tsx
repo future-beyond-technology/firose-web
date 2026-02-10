@@ -10,9 +10,9 @@ export default function NeatFreshCtaBlocks({ whatsappUrl, mailtoUrl }: Readonly<
   return (
     <section className={styles.ctaGrid}>
       <article className={styles.ctaCard}>
-        <h3 className={styles.ctaTitle}>Distributor Partnerships</h3>
+        <h3 className={styles.ctaTitle}>Distributor Expansion</h3>
         <p className={styles.ctaText}>
-          Partner with us to expand Neat &amp; Fresh across regional retail and institutional procurement channels.
+          Expand Neat &amp; Fresh across regional retail and institutional procurement channels with our distributor program.
         </p>
         <Link href="/business-with-us" className={styles.ctaLink}>
           Start Distributor Inquiry

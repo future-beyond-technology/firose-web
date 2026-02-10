@@ -1,73 +1,94 @@
-# AR PERFUME
+# Firose Enterprises
 
-A premium luxury perfume brand website for **AR Perfume** — dark, elegant, Middle Eastern–inspired aesthetic.
+A corporate multi-brand group website for **Firose Enterprises** — featuring a portfolio of brands across fragrance, hygiene, and healthcare categories.
 
 ## Overview
 
-- **Brand:** AR PERFUME  
-- **Style:** Dark luxury, royal gold accents, minimalist layout  
-- **Stack:** HTML, CSS, vanilla JavaScript (no frameworks)
+Firose Enterprises builds and scales focused consumer brands with disciplined quality systems, category-specific positioning, and distribution-ready operations.
 
-## Pages
-
-| Page        | File            | Description                          |
-|------------|-----------------|--------------------------------------|
-| Home       | `index.html`    | Hero, featured collection, brand story, gift box |
-| Collection | `collection.html` | Full perfume grid + gift set CTA   |
-| Product    | `product.html`  | Detail page (use `?name=...` for perfume) |
-| About      | `about.html`    | Brand story and craft                |
-| Contact    | `contact.html`  | Minimal contact form                 |
-
-### Product URL slugs
-
-- `pure-oud`, `magna`, `7-boys`, `lord`, `opal`, `abaya`
-
-Example: `product.html?name=pure-oud`
-
-## Run locally
-
-Open `index.html` in a browser, or use a simple static server:
-
-```bash
-# Python
-python3 -m http.server 8000
-
-# Node (npx)
-npx serve .
-```
-
-Then visit `http://localhost:8000` (or the port shown).
-
-## Structure
-
-```
-ar_perfume/
-├── index.html
-├── collection.html
-├── product.html
-├── about.html
-├── contact.html
-├── css/
-│   └── style.css
-├── js/
-│   ├── main.js      # Header, scroll reveal, form, product buttons
-│   └── product.js   # Product data and dynamic product page content
-└── README.md
-```
-
-## Customization
-
-- **Colors:** Edit `:root` in `css/style.css` (`--color-black`, `--color-gold`, etc.).
-- **Fonts:** Headings use Cormorant Garamond, body uses Outfit (Google Fonts). Change in `style.css` and the `@import` at the top.
-- **Products:** Edit the `PRODUCTS` object in `js/product.js` to add or change perfumes and copy.
-- **Images:** Replace bottle/gift placeholders with real images by adding `<img>` in the card and product gallery markup and pointing to files in an `images/` folder.
-
-## SEO
-
-- Semantic HTML and one `<h1>` per page  
-- Meta `description` on each page  
-- Meaningful link text and minimal JS for content
+### Key Brands
+- **AR Perfumes:** Premium luxury perfume brand with a Middle Eastern–inspired aesthetic.
+- **Femison:** Hygiene and personal care solutions.
+- **Neat Fresh:** Housekeeping and wellness products.
 
 ---
 
-© AR Perfume. For brand use only.
+## Tech Stack
+
+- **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/), PostCSS
+- **UI Components:** React 19
+
+---
+
+## Getting Started
+
+### Requirements
+- **Node.js:** 18.x or later (recommended 20+)
+- **Package Manager:** npm (or yarn/pnpm)
+
+### Setup & Run
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd firose-web
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run development server:**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) to view the result.
+
+---
+
+## Scripts
+
+- `npm run dev`: Starts the development server.
+- `npm run build`: Builds the application for production.
+- `npm run start`: Starts the production server.
+- `npm run lint`: Runs ESLint for code quality checks.
+
+---
+
+## Project Structure
+
+```text
+firose-web/
+├── app/                # Next.js App Router (Pages, Layouts, Components)
+│   ├── about/          # About page and corporate story
+│   ├── brands/         # Brand-specific pages (AR Perfumes, Femison, etc.)
+│   ├── lib/            # Shared utilities and data fetching
+│   └── globals.css     # Global styles and Tailwind directives
+├── docs/               # Architecture, cleanup, and migration documentation
+├── public/             # Static assets (images, favicon)
+├── next.config.js      # Next.js configuration
+├── tailwind.config.ts  # Tailwind CSS configuration
+└── tsconfig.json       # TypeScript configuration
+```
+
+---
+
+## Environment Variables
+No required environment variables for core app behavior.
+
+Optional:
+- `NEXT_PUBLIC_AR_BRAND_WEBSITE`: overrides the AR brand external CTA URL.
+
+---
+
+## Tests
+- TODO: Implement unit and integration tests (e.g., Jest, Playwright).
+- Build validation: `npm run build`
+
+---
+
+## License
+
+© Firose Enterprises. For brand use only.

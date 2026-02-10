@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { brandCatalog, getBrandUrl } from './lib/brands';
 
-const CORPORATE_WHATSAPP = 'https://wa.me/917904674841?text=Hello%20FiroseEnterprises%2C%20I%20would%20like%20to%20connect.';
+const CORPORATE_WHATSAPP = 'https://wa.me/919790600220?text=Hello%20FiroseEnterprises%2C%20I%20would%20like%20to%20connect.';
 const CORPORATE_INDIAMART = 'https://www.indiamart.com/firose-enterpriseschennai/';
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function Home() {
           </h1>
           <p className="max-w-[74ch] text-base sm:text-lg text-[#4a6279]">
             Firose Enterprises builds and scales focused consumer brands with disciplined quality systems,
-            category-specific positioning, and partnership-ready operations.
+            category-specific positioning, and distribution-ready operations.
           </p>
 
           <div className="grid grid-cols-1 gap-2 sm:flex sm:flex-wrap">
@@ -111,7 +111,7 @@ export default function Home() {
       <section className="fe-panel-strong p-4 sm:p-6 lg:p-7">
         <h2 className="text-2xl sm:text-3xl font-semibold text-[#0f4d77]">Start a Business Conversation</h2>
         <p className="mt-2 max-w-[72ch] text-[#4a6279]">
-          For distribution, bulk procurement, or partnership opportunities, connect directly with our corporate team.
+          For distribution, bulk procurement, or category expansion opportunities, connect directly with our corporate team.
         </p>
 
         <div className="mt-4 grid grid-cols-1 gap-2 sm:flex sm:flex-wrap">

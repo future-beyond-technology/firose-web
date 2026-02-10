@@ -9,11 +9,11 @@ import {
 import CorporateLeadForm from '@/app/components/CorporateLeadForm';
 import styles from '../corporate.module.css';
 
-const CORPORATE_WHATSAPP = 'https://wa.me/917904674841?text=Hello%20FiroseEnterprises%2C%20I%20have%20a%20contact%20enquiry.';
+const CORPORATE_WHATSAPP = 'https://wa.me/919790600220?text=Hello%20FiroseEnterprises%2C%20I%20have%20a%20contact%20enquiry.';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Contact Firose Enterprises for partnership, distribution, and corporate enquiries.',
+  description: 'Contact Firose Enterprises for distribution and corporate enquiries.',
 };
 
 export default function ContactPage() {
@@ -24,7 +24,7 @@ export default function ContactPage() {
           <p className={styles.eyebrow}>Contact</p>
           <h1 className={styles.title}>Contact Firose Enterprises</h1>
           <p className={styles.lead}>
-            Reach our team for business enquiries, partnership discussions, and brand-level support.
+            Reach our team for business enquiries, distribution discussions, and brand-level support.
           </p>
         </header>
 
@@ -36,13 +36,13 @@ export default function ContactPage() {
                 <strong>Address:</strong> Firose Enterprises, India
               </li>
               <li>
-                <strong>Phone:</strong> +91 7904674841
+                <strong>Phone:</strong> +91 9790600220
               </li>
               <li>
-                <strong>Email:</strong> corporate@firoseenterprises.com
+                <strong>Email:</strong> info.firoseenterprises@gmail.com
               </li>
               <li>
-                <strong>WhatsApp:</strong> +91 7904674841
+                <strong>WhatsApp:</strong> +91 9790600220
               </li>
             </ul>
 

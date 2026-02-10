@@ -18,8 +18,8 @@ type FormState = {
   message: string;
 };
 
-const CORPORATE_EMAIL = 'corporate@firoseenterprises.com';
-const CORPORATE_WHATSAPP = '917904674841';
+const CORPORATE_EMAIL = 'info.firoseenterprises@gmail.com';
+const CORPORATE_WHATSAPP = '919790600220';
 
 function buildMailToUrl(subject: string, body: string): string {
   const params = new URLSearchParams({
@@ -136,7 +136,7 @@ export default function CorporateLeadForm({
             <option value="Distributor">Become a Distributor</option>
             <option value="Bulk Order">Bulk Order</option>
             <option value="Private Label">Private Labeling</option>
-            <option value="Partnership">Partnership</option>
+            <option value="General Inquiry">General Business Inquiry</option>
           </select>
         </div>
       ) : null}

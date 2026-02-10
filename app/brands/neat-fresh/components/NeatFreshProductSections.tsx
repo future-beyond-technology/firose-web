@@ -47,7 +47,7 @@ export default function NeatFreshProductSections() {
 
       <article className={styles.productCard}>
         <h4 className={styles.productTitle}>Target Customers</h4>
-        <p className={styles.productText}>Current focus channels where Neat &amp; Fresh can expand through distributor partnerships.</p>
+        <p className={styles.productText}>Current focus channels where Neat &amp; Fresh can expand through distributor networks.</p>
         <div className={styles.heroChipRow}>
           {targetSegments.map((segment) => (
             <p key={segment} className={styles.heroChip}>

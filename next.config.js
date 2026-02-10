@@ -6,6 +6,31 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/collection.html',
+        destination: '/brands/ar-perfumes',
+        permanent: true,
+      },
+      {
+        source: '/about.html',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/contact.html',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/product.html',
+        destination: '/brands/ar-perfumes',
+        permanent: true,
+      },
+      {
         source: '/',
         has: [
           {

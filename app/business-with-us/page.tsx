@@ -6,7 +6,7 @@ import styles from '../corporate.module.css';
 export const metadata: Metadata = {
   title: 'Business With Us',
   description:
-    'Partner with Firose Enterprises for distribution, bulk orders, private labeling, and long-term growth opportunities.',
+    'Connect with Firose Enterprises for distribution, bulk orders, private labeling, and category expansion enquiries.',
 };
 
 export default function BusinessWithUsPage() {
@@ -17,7 +17,7 @@ export default function BusinessWithUsPage() {
           <p className={styles.eyebrow}>Lead Conversion</p>
           <h1 className={styles.title}>Business With Us</h1>
           <p className={styles.lead}>
-            We collaborate with distributors, retailers, and strategic partners to scale our brand portfolio responsibly.
+            We work with distributors and retailers to scale our brand portfolio through disciplined channel growth.
           </p>
         </header>
 
@@ -36,17 +36,12 @@ export default function BusinessWithUsPage() {
             <h2 className={styles.sectionTitle}>Private Labeling</h2>
             <p>Private label collaborations are available as a planned expansion track.</p>
           </article>
-
-          <article className={styles.panel}>
-            <h2 className={styles.sectionTitle}>Partnership Inquiry</h2>
-            <p>We support long-term strategic partnerships aligned with category and regional growth goals.</p>
-          </article>
         </div>
       </section>
 
       <section className={styles.section}>
         <article className={styles.contactCard}>
-          <h2 className={styles.sectionTitle}>Submit a Partnership Request</h2>
+          <h2 className={styles.sectionTitle}>Submit a Business Request</h2>
           <CorporateLeadForm contextLabel="Business" buttonLabel="Submit Business Inquiry" showInquiryType />
         </article>
 

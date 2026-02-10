@@ -55,13 +55,13 @@ export default function ManufacturingQualityPage() {
 
           <article className={styles.panel}>
             <h2 className={styles.sectionTitle}>Certifications</h2>
-            <p>Certification and compliance documents can be shared based on partner onboarding stage and requirements.</p>
+            <p>Certification and compliance documents can be shared based on onboarding stage and requirements.</p>
           </article>
         </div>
 
         <div className={styles.actionRow}>
           <Link href="/business-with-us" className={styles.primaryAction}>
-            Partnership Inquiry
+            Business Inquiry
           </Link>
           <Link href="/contact" className={styles.inlineAction}>
             Contact Quality Team

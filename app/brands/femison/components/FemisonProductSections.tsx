@@ -48,7 +48,7 @@ export default function FemisonProductSections() {
       <article className={styles.productCard}>
         <h4 className={styles.productTitle}>Compliance / Trust Indicators</h4>
         <p className={styles.productText}>
-          Certification and assurance artifacts can be shared during partner onboarding and regulatory discussions.
+          Certification and assurance artifacts can be shared during onboarding and regulatory discussions.
         </p>
         <div className={styles.heroChipRow}>
           {trustSignals.map((signal) => (

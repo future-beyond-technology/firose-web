@@ -33,7 +33,7 @@ export default function BrandsOverview() {
           Back to Home
         </Link>
         <Link href="/business-with-us" className={styles.inlineBrandAction}>
-          Partnership Inquiry
+          Business Inquiry
         </Link>
       </div>
     </main>

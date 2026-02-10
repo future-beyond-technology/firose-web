@@ -69,7 +69,7 @@ export default function AboutPage() {
           <h2 className={styles.sectionTitle}>Leadership Message</h2>
           <p>
             We are building Firose Enterprises as a long-horizon group, where each brand earns trust through product
-            quality, clear positioning, and reliable support to channel partners.
+            quality, clear positioning, and reliable support to channel stakeholders.
           </p>
         </div>
 

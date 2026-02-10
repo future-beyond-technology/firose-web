@@ -10,12 +10,12 @@ export default function FemisonCtaBlocks({ whatsappUrl, mailtoUrl }: Readonly<Fe
   return (
     <section className={styles.ctaGrid}>
       <article className={styles.ctaCard}>
-        <h3 className={styles.ctaTitle}>Medical Channel Partnerships</h3>
+        <h3 className={styles.ctaTitle}>Medical Channel Expansion</h3>
         <p className={styles.ctaText}>
           Open conversations for distributor and medical retail opportunities aligned with infant care categories.
         </p>
         <Link href="/business-with-us" className={styles.ctaLink}>
-          Start Partnership Inquiry
+          Start Business Inquiry
         </Link>
       </article>
 

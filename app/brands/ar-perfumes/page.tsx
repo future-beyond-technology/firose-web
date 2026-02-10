@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import SocialLinks from '@/components/SocialLinks';
+import SocialLinks from './components/SocialLinks';
 import About from './components/About';
 import Contact from './components/Contact';
 import Hero from './components/Hero';
@@ -26,7 +26,7 @@ export default function ARPerfumesPage() {
   return (
     <main className={styles.brandPage}>
       <p className={styles.metaTag}>Premium Fragrance Brand</p>
-      <h2 className={styles.brandTitle}>AR Perfumes</h2>
+      <h2 className={`${styles.brandTitle} ${arStyles.goldHeading}`}>AR Perfumes</h2>
       <p className={styles.brandLead}>
         AR Perfumes carries the premium fragrance identity within the group, with brand storytelling, curated product
         highlights, and direct customer conversion via WhatsApp.

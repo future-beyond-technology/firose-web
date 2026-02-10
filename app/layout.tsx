@@ -17,7 +17,7 @@ const organizationSchema = {
       '@type': 'ContactPoint',
       contactType: 'customer support',
       email: 'corporate@firoseenterprises.com',
-      telephone: '+91-7904674841',
+      telephone: '+91-9790600220',
       areaServed: 'IN',
     },
   ],
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: '%s | Firose Enterprises',
   },
   description:
-    'Firose Enterprises is the parent group for AR Perfumes, Neat & Fresh, and Femison, built for trusted consumer products and scalable partnerships.',
+    'Firose Enterprises is the parent group for AR Perfumes, Neat & Fresh, and Femison, built for trusted consumer products and scalable market expansion.',
   keywords: [
     'Firose Enterprises',
     'AR Perfumes',
