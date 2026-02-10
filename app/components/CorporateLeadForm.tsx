@@ -22,12 +22,10 @@ const CORPORATE_EMAIL = 'info.firoseenterprises@gmail.com';
 const CORPORATE_WHATSAPP = '919790600220';
 
 function buildMailToUrl(subject: string, body: string): string {
-  const params = new URLSearchParams({
-    subject,
-    body,
-  });
-
-  return `mailto:${CORPORATE_EMAIL}?${params.toString()}`;
+  const normalizedBody = body.replace(/\r?\n/g, '\r\n');
+  const encodedSubject = encodeURIComponent(subject);
+  const encodedBody = encodeURIComponent(normalizedBody);
+  return `mailto:${CORPORATE_EMAIL}?subject=${encodedSubject}&body=${encodedBody}`;
 }
 
 function buildWhatsAppUrl(message: string): string {

@@ -91,10 +91,8 @@ export function buildBrandWhatsAppUrl(contact: BrandContact, message: string): s
 }
 
 export function buildBrandMailToUrl(contact: BrandContact, subject: string, body?: string): string {
-  const params = new URLSearchParams({
-    subject,
-    body: body ?? '',
-  });
-
-  return `mailto:${contact.email}?${params.toString()}`;
+  const normalizedBody = (body ?? '').replace(/\r?\n/g, '\r\n');
+  const encodedSubject = encodeURIComponent(subject);
+  const encodedBody = encodeURIComponent(normalizedBody);
+  return `mailto:${contact.email}?subject=${encodedSubject}&body=${encodedBody}`;
 }
