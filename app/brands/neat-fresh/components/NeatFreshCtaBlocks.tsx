@@ -12,7 +12,7 @@ export default function NeatFreshCtaBlocks({ whatsappUrl, mailtoUrl }: Readonly<
       <article className={styles.ctaCard}>
         <h3 className={styles.ctaTitle}>Distributor Expansion</h3>
         <p className={styles.ctaText}>
-          Expand Neat &amp; Fresh across regional retail and institutional procurement channels with our distributor program.
+          Expand Neat &amp; Fresh across regional retail and institutional channels with a clear onboarding and support flow.
         </p>
         <Link href="/business-with-us" className={styles.ctaLink}>
           Start Distributor Inquiry
@@ -20,8 +20,8 @@ export default function NeatFreshCtaBlocks({ whatsappUrl, mailtoUrl }: Readonly<
       </article>
 
       <article className={styles.ctaCard}>
-        <h3 className={styles.ctaTitle}>Bulk Supply Conversations</h3>
-        <p className={styles.ctaText}>Share volume requirements and delivery timelines for housekeeping and hygiene procurement.</p>
+        <h3 className={styles.ctaTitle}>Bulk Supply Discussions</h3>
+        <p className={styles.ctaText}>Share volume, frequency, and delivery timelines for housekeeping and hygiene procurement.</p>
         <div className={styles.ctaActionRow}>
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={styles.ctaLink}>
             WhatsApp Contact

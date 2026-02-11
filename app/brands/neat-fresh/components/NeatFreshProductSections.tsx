@@ -24,10 +24,9 @@ export default function NeatFreshProductSections() {
   return (
     <section className={styles.sectionBlock}>
       <header className={styles.sectionHeading}>
-        <h3 className={styles.sectionTitle}>Product Sections</h3>
+        <h3 className={styles.sectionTitle}>Portfolio Architecture</h3>
         <p className={styles.sectionLead}>
-          Neat &amp; Fresh is designed as a scalable hygiene brand with practical formulations and channel-specific product
-          packaging.
+          A clean, category-led structure designed for fast distributor onboarding and clear procurement conversations.
         </p>
       </header>
 
@@ -46,8 +45,8 @@ export default function NeatFreshProductSections() {
       </div>
 
       <article className={styles.productCard}>
-        <h4 className={styles.productTitle}>Target Customers</h4>
-        <p className={styles.productText}>Current focus channels where Neat &amp; Fresh can expand through distributor networks.</p>
+        <h4 className={styles.productTitle}>Core Demand Segments</h4>
+        <p className={styles.productText}>Priority channels where Neat &amp; Fresh is built to scale through partner networks.</p>
         <div className={styles.heroChipRow}>
           {targetSegments.map((segment) => (
             <p key={segment} className={styles.heroChip}>

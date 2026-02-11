@@ -14,7 +14,7 @@ export default function NeatFreshContactCard({
 }: Readonly<NeatFreshContactCardProps>) {
   return (
     <section className={styles.contactCard}>
-      <h3 className={styles.contactTitle}>Brand Contact Person</h3>
+      <h3 className={styles.contactTitle}>Brand Contact Desk</h3>
 
       <ul className={styles.contactList}>
         <li>

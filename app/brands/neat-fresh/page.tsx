@@ -28,6 +28,7 @@ const neatFreshMailToUrl = buildBrandMailToUrl(
   'Hello, I would like to discuss Neat & Fresh products and distribution opportunities.'
 );
 const neatFreshVisual = brandVisuals['neat-fresh'];
+const NEAT_FRESH_WEBSITE_URL = 'https://neatfresh.online';
 
 export const metadata: Metadata = {
   title: 'Neat & Fresh',
@@ -37,37 +38,46 @@ export const metadata: Metadata = {
 
 export default function NeatFresh() {
   return (
-    <main className={`${styles.brandPage} ${brandStyles.brandPageTheme}`}>
-      <BrandTransitionBanner />
-      
-      <p className={`${styles.metaTag} ${brandStyles.brandMeta}`}>Housekeeping Product Brand</p>
-
-      <section className={styles.brandSpotlight}>
-        <div className={styles.brandSpotlightMedia}>
+    <main className={`${styles.brandPage} ${brandStyles.brandPageTheme} ${brandStyles.pageFrame}`}>
+      <section className={brandStyles.masthead}>
+        <div className={brandStyles.mastheadMedia}>
           <Image
             src={neatFreshVisual.heroImage}
             alt={neatFreshVisual.alt}
             fill
-            className={styles.brandSpotlightImage}
-            sizes="(max-width: 899px) 100vw, 50vw"
+            className={brandStyles.mastheadImage}
+            sizes="(max-width: 899px) 100vw, 44vw"
             priority
           />
+          <div className={brandStyles.mastheadOverlay} />
+          <p className={brandStyles.mastheadTag}>{neatFreshVisual.focus}</p>
         </div>
 
-        <div className={styles.brandSpotlightContent}>
-          <p className={`${styles.brandSpotlightBadge} ${brandStyles.brandMeta}`}>{neatFreshVisual.focus}</p>
-          <h2 className={`${styles.brandSpotlightTitle} ${brandStyles.heroTitle}`}>Neat &amp; Fresh</h2>
-          <p className={styles.brandSpotlightText}>
-            Neat &amp; Fresh is designed for practical hygiene performance across home, office, and institutional
-            environments.
+        <div className={brandStyles.mastheadContent}>
+          <p className={brandStyles.mastheadEyebrow}>Housekeeping Product Brand</p>
+          <h1 className={brandStyles.mastheadTitle}>Neat &amp; Fresh</h1>
+          <p className={brandStyles.mastheadLead}>
+            A premium hygiene division built for dependable cleaning performance across residential, workplace, and
+            institutional environments.
           </p>
-          <div className={styles.brandSpotlightChips}>
-            <p className={`${styles.brandSpotlightChip} ${brandStyles.brandMeta}`}>Surface Care</p>
-            <p className={`${styles.brandSpotlightChip} ${brandStyles.brandMeta}`}>Disinfection</p>
-            <p className={`${styles.brandSpotlightChip} ${brandStyles.brandMeta}`}>Bulk Supply Ready</p>
+          <div className={brandStyles.mastheadChipRow}>
+            <p className={brandStyles.mastheadChip}>Surface Care</p>
+            <p className={brandStyles.mastheadChip}>Disinfection Systems</p>
+            <p className={brandStyles.mastheadChip}>Institutional Supply</p>
+          </div>
+
+          <div className={brandStyles.mastheadActions}>
+            <a href={NEAT_FRESH_WEBSITE_URL} target="_self" rel="noopener noreferrer" className={brandStyles.heroPrimary}>
+              Visit Website
+            </a>
+            <Link href="/business-with-us" className={brandStyles.heroSecondary}>
+              Become a Distributor
+            </Link>
           </div>
         </div>
       </section>
+
+      <BrandTransitionBanner />
 
       <div className={styles.actionRow}>
         <Link href="/brands" className={styles.backLink}>
