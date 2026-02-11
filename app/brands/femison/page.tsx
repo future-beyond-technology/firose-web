@@ -11,6 +11,7 @@ import FemisonContactCard from './components/FemisonContactCard';
 import FemisonCtaBlocks from './components/FemisonCtaBlocks';
 import FemisonHero from './components/FemisonHero';
 import FemisonProductSections from './components/FemisonProductSections';
+import FemisonTransitionBanner from './components/FemisonTransitionBanner';
 import brandStyles from './components/femison.module.css';
 import styles from '../brands.module.css';
 
@@ -27,44 +28,56 @@ const femisonMailToUrl = buildBrandMailToUrl(
   'Hello, I would like to discuss Femison baby gripe water, Arwat, and glucose product information and channel opportunities.'
 );
 const femisonVisual = brandVisuals.femison;
+const FEMISON_WEBSITE_URL = 'https://femison.in';
 
 export const metadata: Metadata = {
   title: 'Femison',
   description:
-    'Femison is the baby gripe water, Arwat, and glucose brand under Firose Enterprises, built for infant care and everyday family wellness.',
+    'Femison is the baby gripe water, Arwat, and glucose brand under Firose Enterprises, built for infant care and everyday family wellness. The dedicated website is available at femison.in.',
 };
 
 export default function Femison() {
   return (
-    <main className={`${styles.brandPage} ${brandStyles.brandPageTheme}`}>
-      <p className={`${styles.metaTag} ${brandStyles.brandMeta}`}>Baby Care &amp; Nutrition Brand</p>
-
-      <section className={styles.brandSpotlight}>
-        <div className={styles.brandSpotlightMedia}>
+    <main className={`${styles.brandPage} ${brandStyles.brandPageTheme} ${brandStyles.pageFrame}`}>
+      <section className={brandStyles.masthead}>
+        <div className={brandStyles.mastheadMedia}>
           <Image
             src={femisonVisual.heroImage}
             alt={femisonVisual.alt}
             fill
-            className={styles.brandSpotlightImage}
-            sizes="(max-width: 899px) 100vw, 50vw"
+            className={brandStyles.mastheadImage}
+            sizes="(max-width: 899px) 100vw, 44vw"
             priority
           />
+          <div className={brandStyles.mastheadOverlay} />
+          <p className={brandStyles.mastheadTag}>{femisonVisual.focus}</p>
         </div>
 
-        <div className={styles.brandSpotlightContent}>
-          <p className={`${styles.brandSpotlightBadge} ${brandStyles.brandMeta}`}>{femisonVisual.focus}</p>
-          <h2 className={`${styles.brandSpotlightTitle} ${brandStyles.heroTitle}`}>Femison</h2>
-          <p className={styles.brandSpotlightText}>
-            Femison supports infant care and family wellness with trusted gripe water, Arwat, and glucose products
-            backed by safety-oriented quality controls.
+        <div className={brandStyles.mastheadContent}>
+          <p className={brandStyles.mastheadEyebrow}>Baby Care &amp; Nutrition Brand</p>
+          <h1 className={brandStyles.mastheadTitle}>Femison</h1>
+          <p className={brandStyles.mastheadLead}>
+            A trusted infant-care and family wellness portfolio with safety-focused formulations built for pharmacy,
+            retail, and distributor channels.
           </p>
-          <div className={styles.brandSpotlightChips}>
-            <p className={`${styles.brandSpotlightChip} ${brandStyles.brandMeta}`}>Baby Gripe Water</p>
-            <p className={`${styles.brandSpotlightChip} ${brandStyles.brandMeta}`}>Arwat Formulations</p>
-            <p className={`${styles.brandSpotlightChip} ${brandStyles.brandMeta}`}>Glucose for All Ages</p>
+          <div className={brandStyles.mastheadChipRow}>
+            <p className={brandStyles.mastheadChip}>Baby Gripe Water</p>
+            <p className={brandStyles.mastheadChip}>Arwat Formulations</p>
+            <p className={brandStyles.mastheadChip}>Glucose for All Ages</p>
+          </div>
+
+          <div className={brandStyles.mastheadActions}>
+            <a href={FEMISON_WEBSITE_URL} target="_self" rel="noopener noreferrer" className={brandStyles.heroPrimary}>
+              Visit Website
+            </a>
+            <Link href="/business-with-us" className={brandStyles.heroSecondary}>
+              Healthcare Inquiry
+            </Link>
           </div>
         </div>
       </section>
+
+      <FemisonTransitionBanner />
 
       <div className={styles.actionRow}>
         <Link href="/brands" className={styles.backLink}>

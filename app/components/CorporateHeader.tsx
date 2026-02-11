@@ -18,6 +18,7 @@ const NAV_ITEMS: NavItem[] = [
   { href: '/business-with-us', label: 'Business With Us' },
   { href: '/contact', label: 'Contact', cta: true },
 ];
+const FEMISON_WEBSITE_URL = 'https://femison.in';
 
 function isActive(pathname: string, href: string): boolean {
   if (href === '/') {
@@ -62,6 +63,18 @@ function divisionLinkClass(active: boolean): string {
     : 'border-transparent text-[#b8ad95] hover:border-[#d8bc8760] hover:bg-[#2a22166e] hover:text-[#f4e6c8]';
 
   return `${base} ${activeStyle}`;
+}
+
+function resolveDivisionHref(id: string, href: string): string {
+  if (id === 'femison') {
+    return FEMISON_WEBSITE_URL;
+  }
+
+  return href;
+}
+
+function shouldUseExternalDivisionLink(id: string, external?: boolean): boolean {
+  return external || id === 'femison';
 }
 
 function ExternalLinkIcon({ className }: Readonly<{ className?: string }>) {
@@ -188,13 +201,15 @@ export default function CorporateHeader() {
               >
                 <div className="grid gap-1">
                   {divisionCatalog.map((division) => {
-                    const active = !division.external && isActive(pathname, division.href);
+                    const divisionHref = resolveDivisionHref(division.id, division.href);
+                    const useExternalLink = shouldUseExternalDivisionLink(division.id, division.external);
+                    const active = !useExternalLink && isActive(pathname, divisionHref);
 
-                    if (division.external) {
+                    if (useExternalLink) {
                       return (
                         <a
                           key={division.id}
-                          href={division.href}
+                          href={divisionHref}
                           target="_self"
                           rel="noopener noreferrer"
                           role="menuitem"
@@ -210,7 +225,7 @@ export default function CorporateHeader() {
                     return (
                       <Link
                         key={division.id}
-                        href={division.href}
+                        href={divisionHref}
                         role="menuitem"
                         className={divisionLinkClass(active)}
                         aria-current={active ? 'page' : undefined}
@@ -266,13 +281,15 @@ export default function CorporateHeader() {
               <p className="px-2 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-[#d7bb85]">Our Divisions</p>
               <div className="grid gap-1">
                 {divisionCatalog.map((division) => {
-                  const active = !division.external && isActive(pathname, division.href);
+                  const divisionHref = resolveDivisionHref(division.id, division.href);
+                  const useExternalLink = shouldUseExternalDivisionLink(division.id, division.external);
+                  const active = !useExternalLink && isActive(pathname, divisionHref);
 
-                  if (division.external) {
+                  if (useExternalLink) {
                     return (
                       <a
                         key={division.id}
-                        href={division.href}
+                        href={divisionHref}
                         target="_self"
                         rel="noopener noreferrer"
                         className={`${divisionLinkClass(false)} w-full`}
@@ -288,7 +305,7 @@ export default function CorporateHeader() {
                   return (
                     <Link
                       key={division.id}
-                      href={division.href}
+                      href={divisionHref}
                       className={`${divisionLinkClass(active)} w-full`}
                       aria-current={active ? 'page' : undefined}
                       onClick={() => setMenuOpen(false)}

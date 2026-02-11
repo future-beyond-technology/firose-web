@@ -39,7 +39,7 @@ export const brandVisuals: Record<BrandDefinition['slug'], BrandVisual> = {
     cardImage:
       'https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=1400&q=80',
     heroImage:
-      'https://images.unsplash.com/photo-1516627145497-ae6968895b9a?auto=format&fit=crop&w=1800&q=80',
+      'https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=1800&q=80',
     alt: 'Family wellness and nutrition care moment',
     highlight: 'Baby gripe water, Arwat, and glucose portfolio backed by safety-oriented quality controls.',
     focus: 'Baby Care, Arwat & Glucose',

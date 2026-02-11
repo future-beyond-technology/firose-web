@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { divisionCatalog } from '@/app/lib/divisions';
 import styles from './brands.module.css';
 
+const FEMISON_WEBSITE_URL = 'https://femison.in';
+
 export const metadata: Metadata = {
   title: 'Our Divisions',
   description:
@@ -49,8 +51,11 @@ export default function BrandsOverview() {
 
       <ul className={styles.brandList}>
         {divisionCatalog.map((division) => {
+          const isFemison = division.id === 'femison';
+          const divisionHref = isFemison ? FEMISON_WEBSITE_URL : division.href;
+          const isExternalDivision = division.external || isFemison;
           const isTech = division.theme === 'tech';
-          const ctaLabel = division.ctaLabel ?? (division.external ? 'Visit Website' : 'Open Division');
+          const ctaLabel = division.ctaLabel ?? (isExternalDivision ? 'Visit Website' : 'Open Division');
           const cardClass = isTech ? `${styles.brandVisualCard} ${styles.brandVisualCardTech}` : styles.brandVisualCard;
           const categoryClass = isTech
             ? `${styles.brandVisualCategory} ${styles.brandVisualCategoryTech}`
@@ -87,7 +92,7 @@ export default function BrandsOverview() {
                 </p>
                 <p className={descriptionClass}>{division.description}</p>
                 <span className={actionClass}>
-                  {division.external ? (
+                  {isExternalDivision ? (
                     <>
                       {ctaLabel}
                       <ExternalLinkIcon className="h-4 w-4" />
@@ -102,9 +107,9 @@ export default function BrandsOverview() {
 
           return (
             <li key={division.id}>
-              {division.external ? (
+              {isExternalDivision ? (
                 <a
-                  href={division.href}
+                  href={divisionHref}
                   target="_self"
                   rel="noopener noreferrer"
                   className={cardClass}
@@ -113,7 +118,7 @@ export default function BrandsOverview() {
                   {body}
                 </a>
               ) : (
-                <Link href={division.href} className={cardClass} aria-label={`Open ${division.name} division page`}>
+                <Link href={divisionHref} className={cardClass} aria-label={`Open ${division.name} division page`}>
                   {body}
                 </Link>
               )}

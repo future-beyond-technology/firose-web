@@ -25,10 +25,10 @@ export default function FemisonProductSections() {
   return (
     <section className={styles.sectionBlock}>
       <header className={styles.sectionHeading}>
-        <h3 className={styles.sectionTitle}>Product & Trust Sections</h3>
+        <h3 className={styles.sectionTitle}>Portfolio Architecture</h3>
         <p className={styles.sectionLead}>
-          Femison content architecture is prepared for full portfolio implementation while keeping healthcare, retail,
-          and distributor conversion paths active today.
+          A clean, trust-first product structure designed to support healthcare buyers, retail partners, and
+          distributor expansion.
         </p>
       </header>
 
@@ -47,9 +47,9 @@ export default function FemisonProductSections() {
       </div>
 
       <article className={styles.productCard}>
-        <h4 className={styles.productTitle}>Compliance / Trust Indicators</h4>
+        <h4 className={styles.productTitle}>Compliance &amp; Trust Indicators</h4>
         <p className={styles.productText}>
-          Certification and assurance artifacts can be shared during onboarding and regulatory discussions.
+          Certification and assurance artifacts are available for onboarding and regulatory discussions.
         </p>
         <div className={styles.heroChipRow}>
           {trustSignals.map((signal) => (

@@ -15,6 +15,7 @@ export type DivisionDefinition = {
 
 export const FBT_WEBSITE_URL = 'https://futurebeyondtech.in/';
 export const NEAT_FRESH_WEBSITE_URL = 'https://neatfresh.online';
+export const AR_PERFUMES_WEBSITE_URL = 'https://arperfumes.in';
 
 export const divisionCatalog: DivisionDefinition[] = [
   {
@@ -23,7 +24,8 @@ export const divisionCatalog: DivisionDefinition[] = [
     category: 'Luxury Fragrance',
     description:
       'Luxury fragrance division focused on premium attars, gifting collections, and identity-led brand storytelling.',
-    href: '/brands/ar-perfumes',
+    href: AR_PERFUMES_WEBSITE_URL,
+    external: true,
     image: brandVisuals['ar-perfumes'].cardImage,
     imageAlt: brandVisuals['ar-perfumes'].alt,
   },

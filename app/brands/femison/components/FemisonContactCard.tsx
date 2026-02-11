@@ -10,7 +10,7 @@ type FemisonContactCardProps = {
 export default function FemisonContactCard({ contact, whatsappUrl, mailtoUrl }: Readonly<FemisonContactCardProps>) {
   return (
     <section className={styles.contactCard}>
-      <h3 className={styles.contactTitle}>Brand Contact Person</h3>
+      <h3 className={styles.contactTitle}>Brand Contact Desk</h3>
 
       <ul className={styles.contactList}>
         <li>

@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { divisionCatalog } from '@/app/lib/divisions';
 import styles from './brands.module.css';
 
+const FEMISON_WEBSITE_URL = 'https://femison.in';
+
 export const metadata: Metadata = {
   title: 'Our Divisions',
   description:
@@ -40,11 +42,15 @@ export default function BrandsLayout({ children }: Readonly<{ children: ReactNod
 
         <nav className={styles.brandsNav} aria-label="Divisions navigation">
           <Link href="/brands">Overview</Link>
-          {divisionCatalog.map((division) =>
-            division.external ? (
+          {divisionCatalog.map((division) => {
+            const isFemison = division.id === 'femison';
+            const divisionHref = isFemison ? FEMISON_WEBSITE_URL : division.href;
+            const isExternalDivision = division.external || isFemison;
+
+            return isExternalDivision ? (
               <a
                 key={division.id}
-                href={division.href}
+                href={divisionHref}
                 target="_self"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1"
@@ -54,11 +60,11 @@ export default function BrandsLayout({ children }: Readonly<{ children: ReactNod
                 <ExternalLinkIcon className="h-4 w-4" />
               </a>
             ) : (
-              <Link key={division.id} href={division.href}>
+              <Link key={division.id} href={divisionHref}>
                 {division.name}
               </Link>
-            )
-          )}
+            );
+          })}
         </nav>
       </header>
 

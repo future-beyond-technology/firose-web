@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import CorporateHeader from '@/app/components/CorporateHeader';
+import ExperienceEnhancer from '@/app/components/ExperienceEnhancer';
 import { divisionCatalog } from '@/app/lib/divisions';
 import './globals.css';
 
@@ -100,9 +101,10 @@ function ExternalLinkIcon({ className }: Readonly<{ className?: string }>) {
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body>
         <div className="fe-shell">
+          <ExperienceEnhancer />
           <CorporateHeader />
 
           <script

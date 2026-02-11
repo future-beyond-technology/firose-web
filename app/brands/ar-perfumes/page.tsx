@@ -14,15 +14,16 @@ import styles from '../brands.module.css';
 import { brandVisuals } from '@/app/lib/brandVisuals';
 
 const INSTAGRAM_URL = 'https://www.instagram.com/arperfumes2026';
+const AR_PERFUMES_WEBSITE_URL = 'https://arperfumes.in';
 const externalBrandWebsite = process.env.NEXT_PUBLIC_AR_BRAND_WEBSITE?.trim();
-const brandWebsiteUrl = externalBrandWebsite || INSTAGRAM_URL;
-const brandWebsiteLabel = externalBrandWebsite ? 'Visit Brand Website' : 'Visit Instagram';
+const brandWebsiteUrl = externalBrandWebsite || AR_PERFUMES_WEBSITE_URL;
+const brandWebsiteLabel = 'Visit Brand Website';
 const arVisual = brandVisuals['ar-perfumes'];
 
 export const metadata: Metadata = {
   title: 'AR Perfumes',
   description:
-    'Premium fragrance brand under Firose Enterprises. Follow AR Perfumes on Instagram for updates and offers.',
+    'Premium fragrance brand under Firose Enterprises. Explore AR Perfumes at arperfumes.in for product updates and offers.',
 };
 
 export default function ARPerfumesPage() {
@@ -85,7 +86,7 @@ export default function ARPerfumesPage() {
         </Link>
         <a
           href={brandWebsiteUrl}
-          target="_blank"
+          target="_self"
           rel="noopener noreferrer"
           className={styles.inlineBrandAction}
         >

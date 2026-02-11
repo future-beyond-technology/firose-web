@@ -12,8 +12,7 @@ export default function FemisonCtaBlocks({ whatsappUrl, mailtoUrl }: Readonly<Fe
       <article className={styles.ctaCard}>
         <h3 className={styles.ctaTitle}>Healthcare &amp; Retail Channel Expansion</h3>
         <p className={styles.ctaText}>
-          Open conversations for distributor and retail opportunities across baby gripe water, Arwat, and glucose
-          categories.
+          Expand Femison across healthcare and retail channels with a structured distributor onboarding model.
         </p>
         <Link href="/business-with-us" className={styles.ctaLink}>
           Start Business Inquiry
@@ -21,10 +20,9 @@ export default function FemisonCtaBlocks({ whatsappUrl, mailtoUrl }: Readonly<Fe
       </article>
 
       <article className={styles.ctaCard}>
-        <h3 className={styles.ctaTitle}>Product &amp; Distribution Queries</h3>
+        <h3 className={styles.ctaTitle}>Product &amp; Distribution Discussions</h3>
         <p className={styles.ctaText}>
-          Connect with the brand contact person for product profiles, dosage guidance references, and documentation
-          support.
+          Connect with the brand desk for product profiles, dosage guidance references, and documentation support.
         </p>
         <div className={styles.ctaActionRow}>
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={styles.ctaLink}>
