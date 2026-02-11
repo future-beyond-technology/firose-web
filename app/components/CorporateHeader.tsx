@@ -202,6 +202,7 @@ export default function CorporateHeader() {
                           rel="noopener noreferrer"
                           role="menuitem"
                           className={divisionLinkClass(false)}
+                          aria-label={`Visit ${division.name} website`}
                         >
                           <span>{division.name}</span>
                           <ExternalLinkIcon className="h-4 w-4 text-[#4c657d]" />
@@ -278,6 +279,7 @@ export default function CorporateHeader() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`${divisionLinkClass(false)} w-full`}
+                        aria-label={`Visit ${division.name} website`}
                         onClick={() => setMenuOpen(false)}
                       >
                         <span>{division.name}</span>

@@ -134,6 +134,7 @@ export default function AboutPage() {
         <div className={styles.aboutDivisionGrid}>
           {divisionCatalog.map((division) => {
             const isTech = division.theme === 'tech';
+            const ctaLabel = division.ctaLabel ?? (division.external ? 'Visit Website' : 'Open Division');
             const cardClassName = isTech
               ? `${styles.aboutDivisionCard} ${styles.aboutDivisionCardTech}`
               : styles.aboutDivisionCard;
@@ -155,12 +156,16 @@ export default function AboutPage() {
                     className={actionClassName}
                     aria-label={`Visit ${division.name} website`}
                   >
-                    Visit Website
+                    {ctaLabel}
                     <ExternalLinkIcon className={styles.externalIcon} />
                   </a>
                 ) : (
-                  <Link href={division.href} className={actionClassName}>
-                    Open Division
+                  <Link
+                    href={division.href}
+                    className={actionClassName}
+                    aria-label={`Open ${division.name} division page`}
+                  >
+                    {ctaLabel}
                   </Link>
                 )}
               </article>

@@ -48,6 +48,7 @@ export default function BrandsLayout({ children }: Readonly<{ children: ReactNod
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1"
+                aria-label={`Visit ${division.name} website`}
               >
                 <span>{division.name}</span>
                 <ExternalLinkIcon className="h-4 w-4" />

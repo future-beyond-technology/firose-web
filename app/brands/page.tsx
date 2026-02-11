@@ -50,6 +50,7 @@ export default function BrandsOverview() {
       <ul className={styles.brandList}>
         {divisionCatalog.map((division) => {
           const isTech = division.theme === 'tech';
+          const ctaLabel = division.ctaLabel ?? (division.external ? 'Visit Website' : 'Open Division');
           const cardClass = isTech
             ? `${styles.brandVisualCard} border-[#2b5d8f] bg-gradient-to-b from-[#0c1d33] to-[#11253e] text-[#e8f2ff] shadow-[0_0_0_1px_rgba(64,126,191,0.18),0_16px_34px_rgba(8,23,40,0.5)]`
             : styles.brandVisualCard;
@@ -77,17 +78,17 @@ export default function BrandsOverview() {
               <div className={styles.brandVisualBody}>
                 <h3 className={isTech ? 'text-xl font-semibold text-[#e8f4ff]' : styles.brandItemTitle}>{division.name}</h3>
                 <p className={isTech ? 'w-fit rounded-full border border-[#8ebceb70] bg-[#17385c66] px-2.5 py-1 text-xs text-[#d5e9ff]' : styles.brandVisualFocus}>
-                  {division.external ? 'Technology Division' : 'Consumer Division'}
+                  {isTech ? 'Technology Division' : 'Consumer Division'}
                 </p>
                 <p className={isTech ? 'text-sm text-[#c7d9f0]' : styles.brandItemText}>{division.description}</p>
                 <span className={actionClass}>
                   {division.external ? (
                     <>
-                      Visit Website
+                      {ctaLabel}
                       <ExternalLinkIcon className="h-4 w-4" />
                     </>
                   ) : (
-                    'Open Division'
+                    ctaLabel
                   )}
                 </span>
               </div>
@@ -107,7 +108,7 @@ export default function BrandsOverview() {
                   {body}
                 </a>
               ) : (
-                <Link href={division.href} className={cardClass}>
+                <Link href={division.href} className={cardClass} aria-label={`Open ${division.name} division page`}>
                   {body}
                 </Link>
               )}

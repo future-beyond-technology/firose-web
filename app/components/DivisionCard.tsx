@@ -27,6 +27,7 @@ function ExternalLinkIcon({ className }: Readonly<{ className?: string }>) {
 
 export default function DivisionCard({ division, animationDelayMs = 0 }: Readonly<DivisionCardProps>) {
   const isTech = division.theme === 'tech';
+  const ctaLabel = division.ctaLabel ?? (division.external ? 'Visit Website' : 'Open Division');
   const cardClassName = isTech
     ? 'fe-stagger-card group overflow-hidden rounded-3xl border border-[#2b5c8f] bg-gradient-to-b from-[#0c1d33] to-[#11253e] text-[#e8f2ff] shadow-[0_0_0_1px_rgba(64,126,191,0.18),0_16px_34px_rgba(8,23,40,0.5)] transition hover:-translate-y-0.5 hover:shadow-[0_0_0_1px_rgba(86,156,230,0.36),0_22px_40px_rgba(8,23,40,0.62)]'
     : 'fe-stagger-card group overflow-hidden rounded-3xl border border-[#113b5f28] bg-white text-[#0e2338] shadow-[0_12px_28px_rgba(10,58,90,0.14)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(10,58,90,0.2)]';
@@ -70,12 +71,12 @@ export default function DivisionCard({ division, animationDelayMs = 0 }: Readonl
             className={actionClassName}
             aria-label={`Visit ${division.name} website`}
           >
-            Visit Website
+            {ctaLabel}
             <ExternalLinkIcon className="h-4 w-4" />
           </a>
         ) : (
-          <Link href={division.href} className={actionClassName}>
-            Open Division
+          <Link href={division.href} className={actionClassName} aria-label={`Open ${division.name} division page`}>
+            {ctaLabel}
           </Link>
         )}
       </div>

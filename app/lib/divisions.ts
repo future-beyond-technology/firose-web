@@ -7,12 +7,14 @@ export type DivisionDefinition = {
   description: string;
   href: string;
   external?: boolean;
+  ctaLabel?: string;
   image: string;
   imageAlt: string;
   theme?: 'default' | 'tech';
 };
 
 export const FBT_WEBSITE_URL = 'https://futurebeyondtech.in/';
+export const NEAT_FRESH_WEBSITE_URL = 'https://neatfresh.online';
 
 export const divisionCatalog: DivisionDefinition[] = [
   {
@@ -40,8 +42,9 @@ export const divisionCatalog: DivisionDefinition[] = [
     name: 'Neat & Fresh',
     category: 'Hygiene / FMCG',
     description:
-      'Hygiene and FMCG division delivering housekeeping solutions for homes, offices, and institutional channels.',
-    href: '/brands/neat-fresh',
+      'Premium hygiene and cleanliness solutions for daily essentials across homes, offices, and institutional channels.',
+    href: NEAT_FRESH_WEBSITE_URL,
+    external: true,
     image: brandVisuals['neat-fresh'].cardImage,
     imageAlt: brandVisuals['neat-fresh'].alt,
   },

@@ -24,6 +24,8 @@ const organizationSchema = {
   url: ORGANIZATION_URL,
   description:
     'Firose Enterprises is a diversified enterprise group operating AR Perfumes, Femison, Neat & Fresh, and Future Beyond Technology across fragrance, baby care and nutrition, hygiene FMCG, AI engineering, and cybersecurity.',
+  keywords:
+    'Neat & Fresh, hygiene, cleanliness, daily essentials, premium care, housekeeping products, FMCG, AR Perfumes, Femison, Future Beyond Technology',
   brand: divisionCatalog.map((division) => division.name),
   subOrganization: subOrganizationSchema,
   contactPoint: [
@@ -54,6 +56,10 @@ export const metadata: Metadata = {
     'FBT',
     'consumer brands',
     'housekeeping products',
+    'hygiene',
+    'cleanliness',
+    'daily essentials',
+    'premium care',
     'gripe water',
     'fragrance brand',
     'AI automation',
