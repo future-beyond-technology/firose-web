@@ -2,12 +2,13 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { corporateVisuals } from '@/app/lib/brandVisuals';
+import { FBT_WEBSITE_URL } from '@/app/lib/divisions';
 import styles from '../corporate.module.css';
 
 export const metadata: Metadata = {
   title: 'Our Story',
   description:
-    'Learn the corporate history and legacy of Firose Enterprises, a global manufacturing and distribution group since 1980.',
+    'Learn the corporate history and legacy of Firose Enterprises, a multi-division manufacturing, distribution, and technology group since 1980.',
 };
 
 const storyMilestones = [
@@ -22,11 +23,33 @@ const storyMilestones = [
     text: 'Manufacturing capability and market understanding expanded across fragrance, hygiene, and healthcare segments.',
   },
   {
+    year: '2020s',
+    title: 'Technology Division Launch',
+    text: 'Future Beyond Technology (FBT) was introduced to lead AI-driven software engineering and cybersecurity capabilities.',
+  },
+  {
     year: 'Today',
     title: 'Integrated Brand Platform',
-    text: 'FIROSE now operates a multi-brand portfolio with in-house quality control and scalable distribution readiness.',
+    text: 'FIROSE now operates a diversified portfolio with in-house quality control, scalable distribution, and enterprise technology systems.',
   },
 ];
+
+function ExternalLinkIcon({ className }: Readonly<{ className?: string }>) {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M8 4h8v8" />
+      <path d="M7 13l9-9" />
+      <path d="M16 11v5H4V4h5" />
+    </svg>
+  );
+}
 
 export default function CorporateStory() {
   return (
@@ -49,12 +72,13 @@ export default function CorporateStory() {
           <p className={styles.eyebrow}>Legacy</p>
           <h1 className={styles.storyTitle}>Our Story</h1>
           <p className={styles.storyHeroLead}>
-            From a small entrepreneurial start in 1980 to a trusted multi-brand group, FIROSE has grown through
-            quality-first decisions and long-term market trust.
+            From a small entrepreneurial start in 1980 to a trusted multi-division group, FIROSE has grown through
+            quality-first decisions, technology adoption, and long-term market trust.
           </p>
           <div className={styles.storyHeroChips}>
             <p className={styles.storyHeroChip}>Since 1980</p>
             <p className={styles.storyHeroChip}>In-house Manufacturing</p>
+            <p className={styles.storyHeroChip}>AI &amp; Cybersecurity Division</p>
             <p className={styles.storyHeroChip}>Quality-First Growth</p>
           </div>
         </header>
@@ -78,8 +102,8 @@ export default function CorporateStory() {
             small entrepreneurial venture driven by commitment, integrity, and long-term vision.
           </p>
           <p>
-            What started as a modest operation has steadily evolved into a trusted manufacturing and distribution
-            enterprise, serving diverse consumer segments across fragrance, hygiene, and healthcare.
+            What started as a modest operation has steadily evolved into a trusted manufacturing, distribution, and
+            technology enterprise, serving diverse consumer and enterprise segments.
           </p>
           <p>
             Over decades of consistent growth, Firose Enterprises has remained rooted in one unwavering principle:{' '}
@@ -98,6 +122,28 @@ export default function CorporateStory() {
             price competition.
           </p>
           <p>All operations are fully registered under FSSAI, MSME, and GST.</p>
+        </article>
+
+        <article className={styles.storyNarrativeCard}>
+          <h2 className={styles.sectionTitle}>Future Beyond Technology (FBT)</h2>
+          <p>
+            To strengthen FIROSE&apos;s long-term enterprise capabilities, the group launched FBT as an AI-driven
+            software engineering and cybersecurity division.
+          </p>
+          <p>
+            FBT focuses on automation, secure architecture, and enterprise-grade systems for organizations that require
+            reliability and security at scale.
+          </p>
+          <a
+            href={FBT_WEBSITE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.inlineAction} ${styles.techInlineAction}`}
+            aria-label="Visit Future Beyond Technology website"
+          >
+            Visit FBT Website
+            <ExternalLinkIcon className={styles.externalIcon} />
+          </a>
         </article>
       </div>
 
@@ -156,6 +202,16 @@ export default function CorporateStory() {
           className={styles.primaryAction}
         >
           Visit Our IndiaMART Profile
+        </a>
+        <a
+          href={FBT_WEBSITE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${styles.inlineAction} ${styles.techInlineAction}`}
+          aria-label="Visit Future Beyond Technology website"
+        >
+          Visit FBT Website
+          <ExternalLinkIcon className={styles.externalIcon} />
         </a>
         <Link href="/contact" className={styles.inlineAction}>
           Contact Corporate Team

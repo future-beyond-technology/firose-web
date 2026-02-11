@@ -2,13 +2,31 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { corporateVisuals } from '@/app/lib/brandVisuals';
+import { FBT_WEBSITE_URL, divisionCatalog } from '@/app/lib/divisions';
 import styles from '../corporate.module.css';
 
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Learn about Firose Enterprises, its mission, values, leadership direction, and multi-brand growth strategy.',
+    'Learn about Firose Enterprises, its mission, values, leadership direction, and multi-division growth strategy including Future Beyond Technology (FBT).',
 };
+
+function ExternalLinkIcon({ className }: Readonly<{ className?: string }>) {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M8 4h8v8" />
+      <path d="M7 13l9-9" />
+      <path d="M16 11v5H4V4h5" />
+    </svg>
+  );
+}
 
 export default function AboutPage() {
   return (
@@ -30,13 +48,14 @@ export default function AboutPage() {
           <p className={styles.eyebrow}>Company Overview</p>
           <h1 className={styles.aboutHeroTitle}>About Firose Enterprises</h1>
           <p className={styles.aboutHeroLead}>
-            Firose Enterprises is a parent company that operates category-driven consumer brands with a clear focus on
-            trust, consistency, and long-term market relevance.
+            Firose Enterprises is a parent company that operates category-driven consumer and technology divisions with
+            a clear focus on trust, consistency, and long-term market relevance.
           </p>
 
           <div className={styles.aboutHeroChipRow}>
             <p className={styles.aboutHeroChip}>One Group</p>
             <p className={styles.aboutHeroChip}>Multiple Trusted Brands</p>
+            <p className={styles.aboutHeroChip}>AI &amp; Cybersecurity</p>
             <p className={styles.aboutHeroChip}>Quality-Led Growth</p>
             <p className={styles.aboutHeroChip}>Scalable Operations</p>
           </div>
@@ -48,6 +67,16 @@ export default function AboutPage() {
             <Link href="/about/story" className={styles.inlineAction}>
               Read Our Full Story
             </Link>
+            <a
+              href={FBT_WEBSITE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.inlineAction} ${styles.techInlineAction}`}
+              aria-label="Visit Future Beyond Technology website"
+            >
+              Visit FBT Website
+              <ExternalLinkIcon className={styles.externalIcon} />
+            </a>
           </div>
         </header>
       </section>
@@ -77,7 +106,7 @@ export default function AboutPage() {
         <div className={styles.aboutSignalsGrid}>
           <article className={styles.aboutSignalCard}>
             <p className={styles.statLabel}>Portfolio Focus</p>
-            <p className={styles.statValue}>Fragrance, Hygiene, Healthcare</p>
+            <p className={styles.statValue}>Fragrance, Lifestyle, FMCG, Technology</p>
           </article>
           <article className={styles.aboutSignalCard}>
             <p className={styles.statLabel}>Operating Model</p>
@@ -87,6 +116,53 @@ export default function AboutPage() {
             <p className={styles.statLabel}>Experience Approach</p>
             <p className={styles.statValue}>Process-driven &amp; Scalable</p>
           </article>
+        </div>
+      </section>
+
+      <section className={`${styles.section} ${styles.aboutDivisionSection}`}>
+        <header className={styles.sectionHeading}>
+          <h2 className={styles.sectionTitle}>Group Divisions</h2>
+          <p className={styles.sectionLead}>
+            FIROSE ENTERPRISES now operates four divisions, combining category-focused consumer brands with the new
+            Future Beyond Technology (FBT) AI and cybersecurity division.
+          </p>
+        </header>
+
+        <div className={styles.aboutDivisionGrid}>
+          {divisionCatalog.map((division) => {
+            const isTech = division.theme === 'tech';
+            const cardClassName = isTech
+              ? `${styles.aboutDivisionCard} ${styles.aboutDivisionCardTech}`
+              : styles.aboutDivisionCard;
+            const actionClassName = isTech
+              ? `${styles.aboutDivisionAction} ${styles.aboutDivisionActionTech}`
+              : styles.aboutDivisionAction;
+
+            return (
+              <article key={division.id} className={cardClassName}>
+                <p className={styles.aboutDivisionTag}>{division.category}</p>
+                <h3>{division.name}</h3>
+                <p>{division.description}</p>
+
+                {division.external ? (
+                  <a
+                    href={division.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={actionClassName}
+                    aria-label={`Visit ${division.name} website`}
+                  >
+                    Visit Website
+                    <ExternalLinkIcon className={styles.externalIcon} />
+                  </a>
+                ) : (
+                  <Link href={division.href} className={actionClassName}>
+                    Open Division
+                  </Link>
+                )}
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -139,6 +215,16 @@ export default function AboutPage() {
           <Link href="/about/story" className={styles.inlineAction}>
             Read Our Full Story
           </Link>
+          <a
+            href={FBT_WEBSITE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.inlineAction} ${styles.techInlineAction}`}
+            aria-label="Visit Future Beyond Technology website"
+          >
+            Visit FBT Website
+            <ExternalLinkIcon className={styles.externalIcon} />
+          </a>
           <Link href="/business-with-us" className={styles.inlineAction}>
             Business With Us
           </Link>

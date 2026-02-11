@@ -20,7 +20,7 @@ export const corporateVisuals = {
   storyHeroImage:
     'https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?auto=format&fit=crop&w=2000&q=80',
   storyOperationsImage:
-    'https://images.unsplash.com/photo-1581092446327-9b52bd1590c6?auto=format&fit=crop&w=1800&q=80',
+    'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1800&q=80',
   storyQualityImage:
     'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1800&q=80',
 };
